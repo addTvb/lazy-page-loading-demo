@@ -23,90 +23,54 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
       },
       {
         path: "about",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <About />
-          </Suspense>
-        ),
+        element: <About />,
       },
       {
         path: "services",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Services />
-          </Suspense>
-        ),
+        element: <Services />,
       },
       {
         path: "portfolio",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Portfolio />
-          </Suspense>
-        ),
+        element: <Portfolio />,
       },
       {
         path: "contact",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Contact />
-          </Suspense>
-        ),
+        element: <Contact />,
       },
       {
         path: "blog",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Blog />
-          </Suspense>
-        ),
+        element: <Blog />,
       },
       {
         path: "faq",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <FAQ />
-          </Suspense>
-        ),
+        element: <FAQ />,
       },
       {
         path: "team",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Team />
-          </Suspense>
-        ),
+        element: <Team />,
       },
       {
         path: "pricing",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Pricing />
-          </Suspense>
-        ),
+        element: <Pricing />,
       },
       {
         path: "testimonials",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <Testimonials />
-          </Suspense>
-        ),
+        element: <Testimonials />,
       },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
